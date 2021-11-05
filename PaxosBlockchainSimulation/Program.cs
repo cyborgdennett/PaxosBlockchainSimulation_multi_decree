@@ -8,20 +8,21 @@ namespace PaxosBlockchainSimulation
     {
         static void Main(string[] args)
         {
-            bool test = false;
+            // bool test = false;
     
             Node node = null;
-            PortChat portChat = null;
+            // PortChat portChat = null;
 
             try
             {
-                if (!test)
-                {
-                    portChat = new PortChat();
-                    portChat.Start();
-                }
+                // if (!test)
+                // {
+                //     portChat = new PortChat();
+                //     portChat.Start();
+                // }
                
-                node = new Node(portChat, test);
+                // node = new Node(portChat, test);
+                node = new Node();
             }
             catch(Exception e)
             {

@@ -94,6 +94,23 @@ namespace PaxosBlockchainSimulation.NodeAgents
             LastMessageReceivedAt = DateTime.MinValue;
         }
 
+        
+        /// <summary>
+        ///  Constructor for self (this node, the current instance) without COM port
+        /// </summary>
+        public Node()
+        {
+            PrepareDB(); //DISABLE WHEN NOT NEEDED. SQLite needs this.
+            GetConnectionInformation();
+            if (canExecute)
+            {
+                InitRoles();
+                GetLedgerVariables();
+                ConnectToNetwork().Wait();
+            }
+        }
+
+
         /// <summary>
         ///  Constructor for self (this node, the current instance)
         /// </summary>
